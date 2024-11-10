@@ -1,5 +1,7 @@
 package org.example.Day1;
 
+import org.example.Day6.AccessModifier;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -34,5 +36,7 @@ public class Main {
     System.out.println("name::"+person1.name+"age::"+person1.age+"address::"+person1.address+"city::"+person1.city);
     System.out.println("name::"+person2.name+"age::"+person2.age+"address::"+person2.address+"city::"+person2.city);
     System.out.println("name::"+person3.name+"age::"+person3.age+"address::"+person3.address+"city::"+person3.city);
+        AccessModifier access = new AccessModifier();
+       access.display();
     }
 }
