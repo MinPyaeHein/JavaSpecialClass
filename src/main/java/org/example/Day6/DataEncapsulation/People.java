@@ -6,11 +6,11 @@ public class People {
     private String address;
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(String name) {
-        if(name.length()<=10){
+        if(name.length()>=10){
             throw new IllegalArgumentException("Name should not exceed 10 characters");
         }
         this.name = name;
