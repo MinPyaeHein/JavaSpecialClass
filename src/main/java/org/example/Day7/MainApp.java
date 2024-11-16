@@ -49,7 +49,6 @@ public class MainApp {
         );
 
         ClassRoom classRoom4 = new ClassRoom();
-
         classRoom4.setRoomName("Class Room 104");
     }
 }
