@@ -1,4 +1,5 @@
-package org.example.Day10;
+package org.example.Day11;
+
 import java.util.Scanner;
 
 public class MainApp {
@@ -31,6 +32,19 @@ public class MainApp {
     }
     public static void updateStudent(){
         System.out.println("Welcome to Student Update Process");
+        System.out.println("Enter Student Name that you want to update::");
+        String name=scanner.nextLine();
+        Student student=Student.getStudentByName(name);
+        if(student==null){
+            System.out.println("Student not found...!!!");
+        }else{
+            Student newStudent=getStudentInformation();
+
+            student.setName(newStudent.getName());
+            student.setAge(newStudent.getAge());
+            student.setPhone(newStudent.getPhone());
+        }
+
     }
     public static void displayAllStudents() {
         System.out.println("!!....Display All Students....!! ");
