@@ -14,26 +14,31 @@ public class MainApp {
        this.teacherService = new TeacherService();
    }
     public static void main(String[] args) {
-        MainApp mainApp = new MainApp();
-        System.out.println("Welcome to School Management System");
-        System.out.println("1. Student Management " );
-        System.out.println("2. Teacher Management " );
-        System.out.println("3. Exit " );
-        String master=DataUtail.scanner.nextLine();
-        switch (master){
-            case "1":
-                mainApp.studentService.studentManagement();
-                break;
-            case "2":
-                mainApp.teacherService.teacherManagement();
-                break;
-            case "3":
-                System.out.println("Exiting...");
-                break;
-            default:
-                System.out.println("Invalid Option...!!!");
-                break;
-        }
+        String master=null;
+       do{
+           MainApp mainApp = new MainApp();
+           System.out.println("Welcome to School Management System");
+           System.out.println("1. Student Management " );
+           System.out.println("2. Teacher Management " );
+           System.out.println("3. Exit " );
+           master=DataUtail.scanner.nextLine();
+           switch (master) {
+               case "1":
+                   mainApp.studentService.studentManagement();
+                   break;
+               case "2":
+                   mainApp.teacherService.teacherManagement();
+                   break;
+               case "3":
+                   System.out.println("Exiting...");
+                   break;
+               default:
+                   System.out.println("Invalid Option...!!!");
+                   break;
+           }
+           }while(!master.equals("3"));
+
+
 
 
     }

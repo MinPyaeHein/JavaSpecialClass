@@ -1,6 +1,6 @@
 package org.example.Day15.Service;
 
-import org.example.Day10.Student;
+import org.example.Day15.Model.Student;
 import org.example.Day15.Util.DataUtail;
 
 public class StudentService {
@@ -52,26 +52,35 @@ public class StudentService {
 
         }while(flag);
     }
-    public void deleteStudent(){
-        System.out.println("Delete student Process");
-        System.out.println("Enter Student Name that you want to delete::");
+
+    public void deleteStudent() {
+        System.out.println("Delete Student Process");
+        System.out.println("Enter the name of the student you want to delete:");
         String name = DataUtail.scanner.nextLine();
         Student student = Student.getStudentByName(name);
-        if(student!=null){
-
-        }else{
-            System.out.println("Student not found...!!!");
-        }
+        if (student != null) {
+            System.out.println("Are you sure you want to delete the student information? (yes/no)");
+            System.out.println(student);
+            String confirmation = DataUtail.scanner.nextLine();
+            if (confirmation.equalsIgnoreCase("yes")) {
+                Student.delete(student);
+                System.out.println("Student deleted successfully.");
+                } else { System.out.println("Deletion cancelled.");  }
+               } else { System.out.println("Student not found!"); }
     }
+
     public void updateStudent(){
         System.out.println("Welcome to Student Update Process");
-    }
-    public static void displayAllStudents() {
-        System.out.println("!!....Display All Students....!! ");
-        for (int i = 0; i < Student.totalStudentCount; i++) {
-            Student student = Student.getStudents()[i];
-            System.out.println(student);
-        }
+        System.out.println("Enter Student Name that you want to update::");
+        String name=DataUtail.scanner.nextLine();
+        Student student= Student.getStudentByName(name);
+        if(student==null){
+            System.out.println("Student not found...!!!");
+        }else{
+            Student newStudent=getStudentInformation();
+            student.setName(newStudent.getName());
+            student.setAge(newStudent.getAge());
+            student.setPhone(newStudent.getPhone());    }
     }
     public Student getStudentInformation() {
         System.out.println("Enter Student Name: ");
@@ -83,4 +92,10 @@ public class StudentService {
         Student student = new Student(name, age, phone);
         return student;
     }
+    public static void displayAllStudents() {
+        System.out.println("!!....Display All Students....!! ");
+        for (int i = 0; i < Student.totalStudentCount; i++) {
+            Student student = Student.getStudents()[i];
+            System.out.println(student);
+        }}
 }

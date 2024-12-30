@@ -1,6 +1,6 @@
 package org.example.Day15.Service;
 
-import org.example.Day10.Student;
+import org.example.Day15.Model.Student;
 import org.example.Day15.Model.Teacher;
 import org.example.Day15.Util.DataUtail;
 
@@ -52,28 +52,43 @@ public class TeacherService {
 
         }while(flag);
     }
-    public void deleteTeacher(){
+    public  void deleteTeacher() {
         System.out.println("Delete Teacher Process");
-        System.out.println("Enter Teacher Name that you want to delete::");
+        System.out.println("Enter the name of the Teacher you want to delete:");
         String name = DataUtail.scanner.nextLine();
         Teacher teacher = Teacher.getTeacherByName(name);
-        if(teacher!=null){
+        if (teacher != null) {
+            System.out.println("Are you sure you want to delete the teacher information? (yes/no)");
+            System.out.println(teacher);
+            String confirmation = DataUtail.scanner.nextLine();
+            if (confirmation.equalsIgnoreCase("yes")) {
+                Teacher.delete(teacher);
+                System.out.println("Techer deleted successfully.");
+            } else { System.out.println("Deletion cancelled.");  }
+        } else { System.out.println("Teacher not found!"); }
+    }
 
-        }else{
-            System.out.println("Teacher not found...!!!");
-        }
-    }
     public void updateTeacher(){
-        System.out.println("Welcome to Teacher Update Process");
+        System.out.println("Welcome to Student Update Process");
+        System.out.println("Enter Student Name that you want to update::");
+        String name=DataUtail.scanner.nextLine();
+        Student student= Student.getStudentByName(name);
+        if(student==null){
+            System.out.println("Student not found...!!!");
+        }else{
+            Teacher newTeacher=getTeacherInformation();
+            student.setName(newTeacher.getName());
+            student.setAge(newTeacher.getAge());
+            student.setPhone(newTeacher.getPhone());    }
     }
-    public static void displayAllTeachers() {
+    public void displayAllTeachers() {
         System.out.println("!!....Display All Teachers....!! ");
         for (int i = 0; i < Teacher.getTotalTeacherCount(); i++) {
             Teacher teacher = Teacher.getTeachers()[i];
             System.out.println(teacher);
         }
     }
-    public Teacher getTeacherInformation() {
+    public  Teacher getTeacherInformation() {
         System.out.println("Enter Teacher Name: ");
         String name = DataUtail.scanner.nextLine();
         System.out.println("Enter Teacher Age: ");

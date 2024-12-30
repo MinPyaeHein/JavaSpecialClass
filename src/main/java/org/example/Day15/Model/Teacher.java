@@ -10,7 +10,7 @@ public class Teacher {
     private String position;
     private String address;
     private String subject;
-    private static int totalTeacherCount;
+    private static int totalTeacherCount=0;
 
     public Teacher(String name, int age, String phone, String department, String position, String address, String subject) {
         this.name = name;
@@ -23,6 +23,7 @@ public class Teacher {
     }
     public static void addTeacher(Teacher teacher) {
         Teacher.teachers[totalTeacherCount] = teacher;
+        totalTeacherCount++;
     }
     public static Teacher getTeacherByName(String studentName) {
         for (int i = 0; i < totalTeacherCount; i++) {
@@ -32,6 +33,16 @@ public class Teacher {
         }
         return null;
     }
+    public static void delete(Teacher teacher) {
+        for (int i = 0; i < totalTeacherCount; i++) {
+            if (teachers[i] == teacher) {
+                for (int j = i; j < totalTeacherCount-1; j++) {
+                    teachers[j] = teachers[j+1];
+                }
+                teachers[totalTeacherCount-1] = null;
+                totalTeacherCount--;
+                break;
+            } }}
 
     public static Teacher[] getTeachers() {
         return teachers;
