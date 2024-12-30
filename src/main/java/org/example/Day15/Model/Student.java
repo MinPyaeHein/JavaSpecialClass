@@ -1,16 +1,13 @@
 package org.example.Day15.Model;
 
-public class Student {
+public class Student extends People{
     public static final int MAX_STUDENTS = 10000;
-    private String name;
-    private int age;
-    private String phone;
     public static int totalStudentCount = 0;
     private static Student[] students = new Student[MAX_STUDENTS];
     public Student(String name, int age, String phone) {
-        this.name = name;
-        this.age = age;
-        this.phone = phone;
+        this.setName(name);
+        this.setAge(age);
+        this.setPhone(phone);
     }
 
     public static Student[] getStudents() {
@@ -22,30 +19,6 @@ public class Student {
     public static void addStudent(Student student) {
         Student.students[totalStudentCount] = student;
         totalStudentCount++;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public static Student getStudentByName(String studentName) {
@@ -66,15 +39,5 @@ public class Student {
                 totalStudentCount--;
                 break;
             } }}
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", phone='" + phone + '\'' +
-                '}';
-    }
-
 
 }

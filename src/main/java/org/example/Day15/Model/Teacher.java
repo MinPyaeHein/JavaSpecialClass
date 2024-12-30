@@ -1,11 +1,8 @@
 package org.example.Day15.Model;
 
-public class Teacher {
+public class Teacher extends People{
     public static final int MAX_TEACHERS = 10000;
     private static Teacher[] teachers = new Teacher[MAX_TEACHERS];
-    private String name;
-    private int age;
-    private String phone;
     private String department;
     private String position;
     private String address;
@@ -13,9 +10,9 @@ public class Teacher {
     private static int totalTeacherCount=0;
 
     public Teacher(String name, int age, String phone, String department, String position, String address, String subject) {
-        this.name = name;
-        this.age = age;
-        this.phone = phone;
+        this.setName(name);
+        this.setAge(age);
+        this.setPhone(phone);
         this.department = department;
         this.position = position;
         this.address = address;
@@ -50,31 +47,6 @@ public class Teacher {
 
     public static void setTeachers(Teacher[] teachers) {
         Teacher.teachers = teachers;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public String getDepartment() {
