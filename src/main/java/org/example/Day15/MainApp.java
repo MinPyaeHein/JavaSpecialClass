@@ -7,13 +7,14 @@ import org.example.Day15.Util.DataUtail;
 import java.util.Scanner;
 
 public class MainApp {
-    private StudentService studentService;
+    private StudentService studentService=new StudentService();
     private TeacherService teacherService;
    public MainApp() {
-       this.studentService = new StudentService();
+//       this.studentService =
        this.teacherService = new TeacherService();
    }
     public static void main(String[] args) {
+
         String master=null;
        do{
            MainApp mainApp = new MainApp();
