@@ -85,11 +85,12 @@ public class StudentService {
     public Student getStudentInformation() {
         System.out.println("Enter Student Name: ");
         String name = DataUtail.scanner.nextLine();
-        System.out.println("Enter Student Age: ");
-        int age = DataUtail.scanner.nextInt();DataUtail.scanner.nextLine();
+        System.out.println("Enter Student DateOfBirth(dd/MM/yyyy): ");
+        String BirthDateStr = DataUtail.scanner.nextLine();
+
         System.out.println("Enter Student Phone: ");
         String phone = DataUtail.scanner.nextLine();
-        Student student = new Student(name, age, phone);
+        Student student = new Student(name, 12, phone,BirthDateStr);
         return student;
     }
     public static void displayAllStudents() {

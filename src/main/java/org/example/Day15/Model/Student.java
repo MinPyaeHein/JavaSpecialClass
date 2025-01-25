@@ -1,11 +1,14 @@
 package org.example.Day15.Model;
 
+import java.util.Date;
+
 public class Student extends People{
     public static final int MAX_STUDENTS = 10000;
     public static int totalStudentCount = 0;
     private static Student[] students = new Student[MAX_STUDENTS];
-    public Student(String name, int age, String phone) {
+    public Student(String name, int age, String phone, Date birthDate) {
         this.setName(name);
+        this.setDateOfBirth(birthDate);
         this.setAge(age);
         this.setPhone(phone);
     }
