@@ -90,7 +90,7 @@ public class StudentService {
 
         System.out.println("Enter Student Phone: ");
         String phone = DataUtail.scanner.nextLine();
-        Student student = new Student(name, 12, phone,BirthDateStr);
+        Student student = new Student(name, 12, phone,null);
         return student;
     }
     public static void displayAllStudents() {
