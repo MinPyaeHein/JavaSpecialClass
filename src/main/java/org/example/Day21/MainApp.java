@@ -40,8 +40,6 @@ public class MainApp {
             System.out.println("Please Enter Integer");
             return -1;
         }
-
-
     }
     public static int getVehicleNumberOfVehicles(){
         int number=catchingInteger();
@@ -78,11 +76,7 @@ public class MainApp {
     }
 
     public static void main(String[] args) throws ParseException {
-
         Vehicle vehicle = getVehicleInfo();
         System.out.println(vehicle);
-
-
-
     }
 }
