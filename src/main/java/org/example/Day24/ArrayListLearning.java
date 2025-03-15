@@ -71,9 +71,5 @@ public class ArrayListLearning {
         if(list.isEmpty()){
             System.out.println("list is empty");
         }
-
-
-
-
     }
 }
