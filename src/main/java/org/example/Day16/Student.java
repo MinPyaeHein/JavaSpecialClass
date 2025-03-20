@@ -12,7 +12,7 @@ public class Student extends People{
     }
     public Student(int id,String name, double gpa,String nrc,String email,String address ,int age, String phone){
         System.out.println("<-------Five arguments Constructor----->");
-        super( id,  name,  email,  nrc,  age,  address,  phone);
+//        super( id,  name,  email,  nrc,  age,  address,  phone);
     }
     public double getGpa() {
         return gpa;
