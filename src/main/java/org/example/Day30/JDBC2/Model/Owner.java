@@ -74,6 +74,9 @@ public class Owner {
     public void addPet(Pet pet){
         this.pets.add(pet);
     }
+    public void addAllPets(List<Pet> pets){
+        this.pets.addAll(pets);
+    }
     public void displayPets(){
         for(Pet pet:pets){
             System.out.println(pet);

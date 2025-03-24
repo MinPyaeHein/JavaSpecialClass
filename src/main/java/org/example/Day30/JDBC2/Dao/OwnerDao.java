@@ -28,13 +28,8 @@ public class OwnerDao {
                         rs.getString("phone"),
                         rs.getString("email"));
                 List<Pet> pets=PetDao.findPetsByOwnerId(owner.getId());
-                for(Pet pet : pets){
-                    owner.addPet(pet);
-                }
-
+                owner.addAllPets(pets);
                 owners.add(owner);
-
-
             }
             con.close();
             stmt.close();
